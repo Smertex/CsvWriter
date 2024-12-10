@@ -1,4 +1,4 @@
-package org.writer;
+package by.smertex;
 
 import by.smertex.writer.interfaces.Writable;
 import by.smertex.writer.realisation.WritableBasicRealisation;
@@ -14,6 +14,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Main {
+
     public static void main(String[] args) {
         personSave();
         studentSave();
@@ -23,7 +24,7 @@ public class Main {
     //Пример сохранения person
     private static void personSave(){
         String path = "TestPerson.csv";
-        by.smertex.writer.interfaces.Writable writable = new WritableBasicRealisation("org.writer.model");
+        Writable writable = new WritableBasicRealisation("org.writer.model");
 
         Faker faker = new Faker();
         Months[] months = Months.values();
@@ -48,7 +49,7 @@ public class Main {
     //Пример сохранения student
     private static void studentSave(){
         String path = "TestStudent.csv";
-        by.smertex.writer.interfaces.Writable writable = new WritableBasicRealisation("org.writer.model");
+        Writable writable = new WritableBasicRealisation("org.writer.model");
 
         Faker faker = new Faker();
         List<Student> data = new ArrayList<>();
