@@ -1,8 +1,16 @@
 package org.writer.model;
 
 import by.smertex.annotation.Csv;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Csv(exclude = {"person"})
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TestModel {
     private String username;
 
@@ -13,49 +21,4 @@ public class TestModel {
     private int age;
 
     private Person person;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public TestModel setUsername(String username) {
-        this.username = username;
-        return this;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public TestModel setFirstname(String firstname) {
-        this.firstname = firstname;
-        return this;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public TestModel setLastname(String lastname) {
-        this.lastname = lastname;
-        return this;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public TestModel setAge(int age) {
-        this.age = age;
-        return this;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public TestModel setPerson(Person person) {
-        this.person = person;
-        return this;
-    }
 }

@@ -83,12 +83,13 @@ public class Main {
                 .monthOfBirth(months[random.nextInt(12)])
                 .yearOfBirth(random.nextInt(84) + 1940)
                 .build();
-        TestModel testModel = new TestModel();
-        testModel.setFirstname(faker.name().firstName())
-                .setLastname(faker.name().lastName())
-                .setUsername(faker.name().username())
-                .setAge(random.nextInt(100))
-                .setPerson(person);
+        TestModel testModel = TestModel.builder()
+                .firstname(faker.name().firstName())
+                .lastname(faker.name().lastName())
+                .username(faker.name().username())
+                .age(random.nextInt(100))
+                .person(person)
+                .build();
         List<TestModel> data = new ArrayList<>();
         data.add(testModel);
 
