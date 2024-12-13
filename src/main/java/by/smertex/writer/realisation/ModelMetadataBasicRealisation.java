@@ -25,7 +25,7 @@ public class ModelMetadataBasicRealisation implements ModelMetadata {
      */
     @Override
     public List<Field> getFields() {
-        return fields;
+        return new ArrayList<>(fields);
     }
 
     public ModelMetadataBasicRealisation(Class<?> clazz) {
