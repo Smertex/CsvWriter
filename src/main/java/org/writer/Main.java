@@ -18,6 +18,38 @@ public class Main {
         personSave();
         studentSave();
         testModelSave();
+        allTest();
+    }
+
+    private static void allTest(){
+        String path = "AllTest.csv";
+        by.smertex.writer.interfaces.Writable writable = new WritableBasicRealisation("org.writer.model");
+        Faker faker = new Faker();
+        Months[] months = Months.values();
+        List<Object> data = new ArrayList<>();
+        Random random = new Random();
+
+        IntStream.range(0, 20)
+                .forEach(i -> {
+                    Person person = Person.builder()
+                            .firstName(faker.name().firstName())
+                            .lastName(faker.name().lastName())
+                            .dayOfBirth(random.nextInt(28) + 1)
+                            .monthOfBirth(months[random.nextInt(12)])
+                            .yearOfBirth(random.nextInt(84) + 1940)
+                            .build();
+                    data.add(person);
+
+                    Student student = new Student(faker.name().firstName(), new ArrayList<>());
+                    List<String> score = new ArrayList<>();
+                    student.setScore(score);
+                    IntStream.range(0, random.nextInt(10) + 5)
+                            .forEach(j -> score.add((String.valueOf(random.nextInt(100))))
+                            );
+                    data.add(student);
+                });
+
+        writable.writeToFile(data, path);
     }
 
     //Пример сохранения person
