@@ -20,5 +20,4 @@ public class Person {
     private Months monthOfBirth;
 
     private int yearOfBirth;
-
 }
